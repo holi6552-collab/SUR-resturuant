@@ -6,6 +6,6 @@ Description: Sur Restaurant is a restaurant website project that gives visitors 
 
 Name: Hayden Oliveira
 
-About This Project: The goal is to create a professional-looking website that introduces the restaurant and allows visitors to learn more about it.
+About This Project: The goal is to create a professional-looking website that introduces the restaurant and allows users to learn more about it.
 
 Technologies: HTML, CSS, JavaScript, Bootstrap
