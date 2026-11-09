@@ -1,4 +1,3 @@
-# Images and Credits
 SUR-resturuaurant
 
 Restaurant Name: Sur Restaurant
