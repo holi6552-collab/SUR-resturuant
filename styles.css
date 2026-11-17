@@ -114,7 +114,7 @@ section > img {
     border-radius: 12px;
 }
 /* Primary Buttons */
-.button-primary, .btn-primary, main a[href*="opentable"], main a[href*="doordash"] {
+.button-primary, .btn-primary, main a[href*="opentable"], {
     display: inline-block;
     background-color: var(--burgundy);
     color: var(--cream);
@@ -126,7 +126,7 @@ section > img {
     margin: 8px 8px 8px 0;
     transition: background-color 0.3s ease;
 }
-.button-primary:hover, .btn-primary:hover, main a[href*="opentable"]:hover, main a[href*="doordash"]:hover {
+.button-primary:hover, .btn-primary:hover, main a[href*="opentable"]:hover,{
     background-color: var(--charcoal);
     border-color: var(--charcoal);
     color: var(--white);
