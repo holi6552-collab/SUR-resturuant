@@ -297,6 +297,43 @@ footer a {
     margin: 0 8px;
 }
 footer a:hover { color: var(--gold); }
+/* Call Now Button */
+a[href^="tel:"] {
+    background-color: #6B2638;
+    color: #F5F0E8;
+    border: 2px solid #6B2638;
+}
+a[href^="tel:"]:hover {
+    background-color: #292321;
+    color: #F5F0E8;
+    border-color: #292321;
+}
+/* Get Directions Button */
+a[href*="google.com/maps"],
+a[href*="maps.google.com"],
+a[href*="maps.app.goo.gl"] {
+    background-color: #F5F0E8;
+    color: #6B2638;
+    border: 2px solid #6B2638;
+}
+a[href*="google.com/maps"]:hover,
+a[href*="maps.google.com"]:hover,
+a[href*="maps.app.goo.gl"]:hover {
+    background-color: #6B2638;
+    color: #F5F0E8;
+}
+/* Contact Button Mobile Styling */
+@media (max-width: 767px) {
+    a[href^="tel:"],
+    a[href*="google.com/maps"],
+    a[href*="maps.google.com"],
+    a[href*="maps.app.goo.gl"] {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
 /* Hamburger Menu */
 .menu-toggle {
     display: none;
