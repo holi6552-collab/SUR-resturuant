@@ -1,0 +1,63 @@
+/* SUR Restaurant & Lounge | Part 3 | Mobile-first custom CSS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap');
+:root { --burgundy:#6B2638; --cream:#F5F0E8; --gold:#B49A69; --charcoal:#292321; --white:#fff; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--cream); color:var(--charcoal); font:16px/1.65 'Lato',Arial,sans-serif; }
+h1,h2,h3 { font-family:'Playfair Display',Georgia,serif; line-height:1.25; color:var(--burgundy); }
+h1 { font-size:clamp(2.1rem,5vw,3rem); } h2 { font-size:clamp(1.65rem,4vw,2.25rem); } h3 { font-size:1.5rem; }
+a { color:var(--burgundy); } a:hover { color:#86552e; }
+a:focus-visible,button:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+img { display:block; max-width:100%; height:auto; border-radius:12px; }
+iframe { display:block; max-width:100%; border:0; border-radius:12px; }
+/* Shared header and mobile menu */
+.site-header { background:var(--burgundy); color:var(--cream); padding:16px; }
+.header-inner { max-width:1200px; margin:auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+.site-brand { margin:0; font:700 1.45rem/1.3 'Playfair Display',Georgia,serif; }
+.menu-toggle { display:block; background:transparent; color:var(--cream); border:2px solid var(--gold); border-radius:8px; font-size:1.5rem; min-width:48px; min-height:48px; cursor:pointer; }
+.site-nav { flex-basis:100%; display:grid; grid-template-rows:0fr; opacity:0; visibility:hidden; transition:grid-template-rows .25s ease,opacity .25s ease,visibility .25s; }
+.site-nav > a { display:none; color:var(--cream); text-decoration:none; padding:12px 16px; min-height:44px; }
+.site-nav.is-open { grid-template-rows:1fr; opacity:1; visibility:visible; }
+.site-nav.is-open > a { display:block; }
+.site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--gold); text-decoration:underline; }
+/* Page sections and cards */
+main { max-width:1200px; padding:24px 16px; margin:auto; }
+main > section { margin-bottom:48px; }
+main > section > img { width:100%; max-height:540px; object-fit:cover; margin:24px 0; }
+.hero { padding-bottom:24px; border-bottom:2px solid var(--gold); }
+article { background:var(--white); padding:24px; border-radius:12px; margin:16px 0; box-shadow:0 4px 14px rgba(41,35,33,.09); }
+article h3 { margin-top:0; } article img { width:100%; height:230px; object-fit:cover; margin:16px 0; }
+/* Calls to action */
+.button,main a[href*="opentable"],main a[href*="doordash"] { display:inline-block; padding:12px 24px; margin:8px 8px 8px 0; min-height:44px; border-radius:8px; font-weight:700; text-decoration:none; }
+.button-primary,main a[href*="opentable"],main a[href*="doordash"] { background:var(--burgundy); color:var(--cream); border:2px solid var(--burgundy); }
+.button-secondary { background:transparent; color:var(--burgundy); border:2px solid var(--burgundy); }
+.button-primary:hover,main a[href*="opentable"]:hover,main a[href*="doordash"]:hover { background:var(--charcoal); border-color:var(--charcoal); color:var(--cream); }
+.button-secondary:hover { background:var(--burgundy); color:var(--cream); }
+/* Menu, contact, footer */
+.menu-category { padding-top:8px; border-top:2px solid var(--gold); }
+.menu-category article { break-inside:avoid; }
+address { font-style:normal; } ul { padding-left:24px; } li { margin-bottom:8px; }
+footer { background:var(--charcoal); color:var(--cream); text-align:center; padding:32px 16px; }
+footer a { color:var(--cream); display:inline-block; padding:4px; }
+footer a:hover { color:var(--gold); }
+/* Tablet: two-column content */
+@media (min-width:768px) {
+ main { padding:40px 32px; }
+ .menu-toggle { display:none; }
+ .site-nav,.site-nav.is-open { display:flex; flex-basis:auto; width:auto; opacity:1; visibility:visible; gap:8px; }
+ .site-nav > a,.site-nav.is-open > a { display:inline-block; }
+ .highlights,.featured-food { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+ .highlights > h2,.featured-food > h2,.featured-food > p { grid-column:1/-1; }
+ .highlights article,.featured-food article { margin:0; }
+ .menu-category { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+ .menu-category > h2 { grid-column:1/-1; }
+ .menu-category article { margin:0; }
+}
+/* Desktop: three-column cards and controlled page width */
+@media (min-width:1025px) {
+ main { padding:48px; }
+ main > section { margin-bottom:64px; }
+ .highlights,.featured-food { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .menu-category { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
