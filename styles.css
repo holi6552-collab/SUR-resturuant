@@ -400,8 +400,6 @@ a[href*="maps.app.goo.gl"]:hover {
         align-items: stretch;
         width: 100%;
         gap: 0;
-    }
-    .site-nav.is-open { display: flex; }
     .site-nav a {
         display: block;
         padding: 14px 8px;
