@@ -1,4 +1,4 @@
-SUR-resturuaurant
+3SUR-resturuaurant
 
 Restaurant Name: Sur Restaurant
 
@@ -18,7 +18,7 @@ I added restaurant information, menu items, images, and links to help visitors n
 
 For this part of the project, I focused on using proper HTML elements and keeping everything organized. I haven't added CSS yet because I'll do that in Part 3.
 
-## Part 2 - CSS Styling & JavaScript
+## Part 3 - CSS Styling & JavaScript
 
 For Part 3, I added CSS to improve my website's appearance. I also used my original color palette of burgundy, cream, gold, and charcoal. I also used Playfair Display for headings and Lato for the regular text.
 
