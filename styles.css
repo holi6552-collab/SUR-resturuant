@@ -394,27 +394,14 @@ a[href*="maps.app.goo.gl"]:hover {
     .header-inner { flex-wrap: wrap; }
     .site-brand strong, header strong { font-size: 21px; }
     .menu-toggle { display: block; margin-left: auto; }
- 
-/* Smooth Hamburger Menu */
-.site-nav {
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: 0;
-}
-.site-nav.is-open { display: flex; }
-}
-.site-nav ul {
-    min-height: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
+    .site-nav {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+    }
+    .site-nav.is-open { display: flex; }
     .site-nav a {
         display: block;
         padding: 14px 8px;
@@ -445,5 +432,7 @@ a[href*="maps.app.goo.gl"]:hover {
         transition-duration: 0.01ms !important;
     }
 }
+
+
 
 
