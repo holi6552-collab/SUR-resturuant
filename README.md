@@ -1,4 +1,4 @@
-3SUR-resturuaurant
+SUR-resturuaurant
 
 Restaurant Name: Sur Restaurant
 
