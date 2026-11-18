@@ -1,7 +1,7 @@
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-/* Original Color Palette */
+/* Original SUR Color Palette */
 :root {
     --burgundy: #6B2638;
     --cream: #F5F0E8;
@@ -10,8 +10,12 @@
     --white: #FFFFFF;
 }
 /* General Styling */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     background-color: var(--cream);
@@ -22,15 +26,14 @@ body {
 }
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
+    color: var(--burgundy);
     font-weight: 500;
     line-height: 1.25;
-    color: var(--burgundy);
 }
 h1 { font-size: 48px; }
 h2 { font-size: 36px; }
 h3 { font-size: 24px; }
 p { margin: 0 0 16px; }
-small { font-size: 13px; }
 a { color: var(--burgundy); }
 a:hover { color: var(--gold); }
 a:focus-visible, button:focus-visible {
@@ -49,7 +52,7 @@ iframe {
     border: 0;
 }
 /* Header */
-.site-header, header {
+.site-header, body > header {
     background-color: var(--burgundy);
     color: var(--cream);
     border-bottom: 3px solid var(--gold);
@@ -63,21 +66,35 @@ iframe {
     align-items: center;
     gap: 24px;
 }
-.site-brand, header > p { margin: 0; }
-.site-brand strong, header strong {
+.site-brand, body > header > p {
+    margin: 0;
+}
+.site-brand strong, body > header strong {
     font-family: 'Playfair Display', serif;
     font-size: 26px;
     font-weight: 500;
     color: var(--cream);
     letter-spacing: 0.5px;
 }
-/* Navigation */
-.site-nav, header nav {
+/* Desktop Navigation */
+.site-nav, body > header nav {
+    display: flex;
+    align-items: center;
+}
+.nav-list, body > header nav ul {
     display: flex;
     align-items: center;
     gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-.site-nav a, header nav a {
+.nav-list li, body > header nav li {
+    margin: 0;
+    padding: 0;
+}
+.site-nav a, body > header nav a {
+    display: block;
     color: var(--cream);
     text-decoration: none;
     font-size: 14px;
@@ -87,9 +104,21 @@ iframe {
     padding: 12px;
     transition: color 0.3s ease;
 }
-.site-nav a:hover, header nav a:hover,
+.site-nav a:hover, body > header nav a:hover,
 .site-nav a[aria-current="page"] {
     color: var(--gold);
+}
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    color: var(--cream);
+    border: 2px solid var(--gold);
+    border-radius: 3px;
+    padding: 8px 14px;
+    font-size: 24px;
+    line-height: 1.2;
+    cursor: pointer;
 }
 /* Main Content */
 main {
@@ -97,8 +126,12 @@ main {
     margin: 0 auto;
     padding: 48px 32px;
 }
-section { margin-bottom: 64px; }
-section > h1, section > h2 { margin-top: 0; }
+section {
+    margin-bottom: 64px;
+}
+section > h1, section > h2 {
+    margin-top: 0;
+}
 section > h2 {
     text-align: center;
     margin-bottom: 32px;
@@ -125,7 +158,9 @@ section > h2::after {
     height: 480px;
     object-fit: cover;
 }
-.hero-copy { padding: 48px 32px; }
+.hero-copy {
+    padding: 48px 32px;
+}
 .hero h1 {
     margin: 0 0 16px;
     font-size: 48px;
@@ -141,21 +176,25 @@ section > h2::after {
     gap: 16px;
     margin-top: 32px;
 }
-/* Buttons */
+/* All Website Buttons */
 .button, .btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 14px 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 24px;
     border-radius: 3px;
     font-family: 'Lato', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
+    line-height: 1.4;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Reservation Button */
+/* Primary Burgundy Buttons */
 .button-primary, .btn-primary {
     background-color: var(--burgundy);
     color: var(--cream);
@@ -166,38 +205,13 @@ section > h2::after {
     border-color: var(--charcoal);
     color: var(--cream);
 }
-/* Explore Menu Button */
+/* Secondary Cream Buttons */
 .button-secondary, .btn-secondary {
     background-color: var(--cream);
     color: var(--burgundy);
     border: 2px solid var(--burgundy);
 }
 .button-secondary:hover, .btn-secondary:hover {
-    background-color: var(--burgundy);
-    color: var(--cream);
-}
-/* Other Action Links */
-main a[href*="opentable"]:not(.button),
-main a[href="menu.html"]:not(.button),
-main a[href="contact.html"]:not(.button) {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 2px solid var(--burgundy);
-    color: var(--burgundy);
-    text-decoration: none;
-    font-weight: 700;
-    margin: 8px 8px 8px 0;
-}
-main a[href*="opentable"]:not(.button) {
-    background-color: var(--burgundy);
-    color: var(--cream);
-}
-main a[href*="opentable"]:not(.button):hover {
-    background-color: var(--charcoal);
-    color: var(--cream);
-}
-main a[href="menu.html"]:not(.button):hover,
-main a[href="contact.html"]:not(.button):hover {
     background-color: var(--burgundy);
     color: var(--cream);
 }
@@ -208,8 +222,12 @@ article {
     padding: 24px;
     box-shadow: 0 6px 24px rgba(41,35,33,0.06);
 }
-article h3 { margin: 0 0 16px; }
-article p:last-child { margin-bottom: 0; }
+article h3 {
+    margin: 0 0 16px;
+}
+article p:last-child {
+    margin-bottom: 0;
+}
 article img {
     width: 100%;
     height: 240px;
@@ -222,9 +240,13 @@ article img {
     grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 24px;
 }
-.highlights h2 { grid-column: 1 / -1; }
-.highlights article { margin: 0; }
-/* Featured Food */
+.highlights h2 {
+    grid-column: 1 / -1;
+}
+.highlights article {
+    margin: 0;
+}
+/* Featured Dishes */
 .featured-food {
     display: grid;
     grid-template-columns: repeat(3, minmax(0,1fr));
@@ -234,8 +256,12 @@ article img {
 .featured-food > p {
     grid-column: 1 / -1;
 }
-.featured-food > p { text-align: center; }
-.featured-food article { margin: 0; }
+.featured-food > p {
+    text-align: center;
+}
+.featured-food article {
+    margin: 0;
+}
 /* Other Restaurant Images */
 section > img {
     width: 100%;
@@ -250,7 +276,9 @@ section > img {
     padding: 48px 32px;
     text-align: center;
 }
-.visit-section p { line-height: 1.9; }
+.visit-section p {
+    line-height: 1.9;
+}
 /* Menu Page */
 #appetizers, #salads, #main-courses,
 #pasta, #desserts, #brunch {
@@ -270,14 +298,68 @@ section > img {
     border-top: 3px solid var(--gold);
     margin: 0;
 }
-article small { color: #665B55; }
-/* Contact Page */
+article small {
+    color: #665B55;
+}
+/* Contact Information */
 address {
     font-style: normal;
     margin-bottom: 16px;
 }
-ul { padding-left: 24px; }
-li { margin-bottom: 8px; }
+main ul:not(.nav-list) {
+    padding-left: 24px;
+}
+main li {
+    margin-bottom: 8px;
+}
+/* Contact Page Button Container */
+.contact-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 32px 0;
+}
+/* Contact Page Button Styling */
+.contact-buttons .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 24px;
+    margin: 0;
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+/* Call Now and Reservation Buttons */
+.contact-buttons .button-primary {
+    background-color: var(--burgundy);
+    color: var(--cream);
+    border: 2px solid var(--burgundy);
+}
+.contact-buttons .button-primary:hover {
+    background-color: var(--charcoal);
+    border-color: var(--charcoal);
+    color: var(--cream);
+}
+/* Get Directions Button */
+.contact-buttons .button-secondary {
+    background-color: var(--cream);
+    color: var(--burgundy);
+    border: 2px solid var(--burgundy);
+}
+.contact-buttons .button-secondary:hover {
+    background-color: var(--burgundy);
+    color: var(--cream);
+}
+/* Contact Map */
 iframe {
     min-height: 400px;
     border: 2px solid var(--gold);
@@ -290,59 +372,16 @@ footer {
     padding: 40px 24px;
     border-top: 3px solid var(--gold);
 }
-footer p { margin: 8px 0; }
+footer p {
+    margin: 8px 0;
+}
 footer a {
     color: var(--cream);
     text-decoration: none;
     margin: 0 8px;
 }
-footer a:hover { color: var(--gold); }
-/* Call Now Button */
-a[href^="tel:"] {
-    background-color: #6B2638;
-    color: #F5F0E8;
-    border: 2px solid #6B2638;
-}
-a[href^="tel:"]:hover {
-    background-color: #292321;
-    color: #F5F0E8;
-    border-color: #292321;
-}
-/* Get Directions Button */
-a[href*="google.com/maps"],
-a[href*="maps.google.com"],
-a[href*="maps.app.goo.gl"] {
-    background-color: #F5F0E8;
-    color: #6B2638;
-    border: 2px solid #6B2638;
-}
-a[href*="google.com/maps"]:hover,
-a[href*="maps.google.com"]:hover,
-a[href*="maps.app.goo.gl"]:hover {
-    background-color: #6B2638;
-    color: #F5F0E8;
-}
-/* Contact Button Mobile Styling */
-@media (max-width: 767px) {
-    a[href^="tel:"],
-    a[href*="google.com/maps"],
-    a[href*="maps.google.com"],
-    a[href*="maps.app.goo.gl"] {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 10px 0;
-    }
-}
-/* Hamburger Menu */
-.menu-toggle {
-    display: none;
-    background-color: transparent;
-    color: var(--cream);
-    border: 2px solid var(--gold);
-    padding: 8px 14px;
-    font-size: 24px;
-    cursor: pointer;
+footer a:hover {
+    color: var(--gold);
 }
 /* Tablet Screens */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -351,53 +390,115 @@ a[href*="maps.app.goo.gl"]:hover {
     #pasta, #desserts, #brunch {
         grid-template-columns: repeat(2, minmax(0,1fr));
     }
-    main { padding: 32px 24px; }
-    .hero > img { height: 400px; }
+    main {
+        padding: 32px 24px;
+    }
+    .hero > img {
+        height: 400px;
+    }
 }
 /* Mobile Screens */
 @media (max-width: 767px) {
     h1 { font-size: 36px; }
     h2 { font-size: 28px; }
     h3 { font-size: 22px; }
-    .site-header, header { padding: 16px; }
-    .header-inner { flex-wrap: wrap; }
-    .site-brand strong, header strong { font-size: 21px; }
-    .menu-toggle { display: block; margin-left: auto; }
+    .site-header, body > header {
+        padding: 16px;
+    }
+    .header-inner {
+        flex-wrap: wrap;
+    }
+    .site-brand strong, body > header strong {
+        font-size: 21px;
+    }
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
     .site-nav {
-        display: none;
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        visibility: hidden;
+        width: 100%;
+        transition: grid-template-rows 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .site-nav.is-open {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-list {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
-        width: 100%;
         gap: 0;
+        min-height: 0;
+        overflow: hidden;
+        width: 100%;
     }
-    .site-nav.is-open { display: flex; }
-    .site-nav a {
+    .nav-list li {
+        width: 100%;
+    }
+    .nav-list a {
         display: block;
         padding: 14px 8px;
         border-bottom: 1px solid var(--gold);
     }
-    main { padding: 24px 16px; }
-    section { margin-bottom: 40px; }
-    .hero > img { height: 280px; }
-    .hero-copy { padding: 32px 20px; }
-    .hero h1 { font-size: 36px; }
-    .hero-actions { flex-direction: column; }
-    .hero-actions .button { width: 100%; }
+    main {
+        padding: 24px 16px;
+    }
+    section {
+        margin-bottom: 40px;
+    }
+    .hero > img {
+        height: 280px;
+    }
+    .hero-copy {
+        padding: 32px 20px;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+    .hero-actions .button {
+        width: 100%;
+    }
     .highlights, .featured-food,
     #appetizers, #salads, #main-courses,
     #pasta, #desserts, #brunch {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-    article { padding: 20px; }
-    article img { height: 220px; }
-    .visit-section { padding: 32px 20px; }
-    footer { padding: 32px 16px; }
+    article {
+        padding: 20px;
+    }
+    article img {
+        height: 220px;
+    }
+    .visit-section {
+        padding: 32px 20px;
+    }
+    .contact-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .contact-buttons .button {
+        width: 100%;
+    }
+    footer {
+        padding: 32px 16px;
+    }
 }
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+    html {
+        scroll-behavior: auto;
+    }
     *, *::before, *::after {
         transition-duration: 0.01ms !important;
     }
 }
+
