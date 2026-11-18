@@ -315,7 +315,6 @@ main li {
     .site-nav ul {
         flex-direction: column;
     }
-}
 
 iframe {
     min-height: 400px;
