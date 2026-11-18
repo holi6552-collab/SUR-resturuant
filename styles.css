@@ -395,7 +395,7 @@ a[href*="maps.app.goo.gl"]:hover {
     .site-brand strong, header strong { font-size: 21px; }
     .menu-toggle { display: block; margin-left: auto; }
     .site-nav {
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: stretch;
         width: 100%;
