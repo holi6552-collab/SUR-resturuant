@@ -1,7 +1,7 @@
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-/* Original SUR Color Palette */
+/* Original Color Palette */
 :root {
     --burgundy: #6B2638;
     --cream: #F5F0E8;
@@ -26,9 +26,9 @@ body {
 }
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    color: var(--burgundy);
     font-weight: 500;
     line-height: 1.25;
+    color: var(--burgundy);
 }
 h1 { font-size: 48px; }
 h2 { font-size: 36px; }
@@ -62,8 +62,8 @@ iframe {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 24px;
 }
 .site-brand, body > header > p {
@@ -77,38 +77,42 @@ iframe {
     letter-spacing: 0.5px;
 }
 /* Desktop Navigation */
-.site-nav, body > header nav {
-    display: flex;
-    align-items: center;
+.site-nav {
+    display: block;
+    width: auto;
 }
-.nav-list, body > header nav ul {
+.site-nav .nav-list {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
+    justify-content: flex-end;
+    gap: 24px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.nav-list li, body > header nav li {
+.site-nav .nav-list li {
+    display: block;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
-.site-nav a, body > header nav a {
+.site-nav .nav-list a {
     display: block;
     color: var(--cream);
-    text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    letter-spacing: 1px;
+    text-decoration: none;
     text-transform: uppercase;
-    padding: 12px;
+    letter-spacing: 1px;
+    padding: 12px 0;
     transition: color 0.3s ease;
 }
-.site-nav a:hover, body > header nav a:hover,
-.site-nav a[aria-current="page"] {
+.site-nav .nav-list a:hover,
+.site-nav .nav-list a[aria-current="page"] {
     color: var(--gold);
 }
-/* Hamburger Menu Button */
+/* Hamburger Menu */
 .menu-toggle {
     display: none;
     background-color: transparent;
@@ -202,8 +206,8 @@ section > h2::after {
 }
 .button-primary:hover, .btn-primary:hover {
     background-color: var(--charcoal);
-    border-color: var(--charcoal);
     color: var(--cream);
+    border-color: var(--charcoal);
 }
 /* Secondary Cream Buttons */
 .button-secondary, .btn-secondary {
@@ -234,7 +238,7 @@ article img {
     object-fit: cover;
     margin: 16px 0;
 }
-/* Homepage Restaurant Highlights */
+/* Homepage Highlights */
 .highlights {
     display: grid;
     grid-template-columns: repeat(3, minmax(0,1fr));
@@ -312,7 +316,7 @@ main ul:not(.nav-list) {
 main li {
     margin-bottom: 8px;
 }
-/* Contact Page Button Container */
+/* Contact Button Container */
 .contact-buttons {
     display: flex;
     align-items: center;
@@ -320,7 +324,7 @@ main li {
     gap: 16px;
     margin: 32px 0;
 }
-/* Contact Page Button Styling */
+/* Contact Buttons */
 .contact-buttons .button {
     display: inline-flex;
     align-items: center;
@@ -334,9 +338,9 @@ main li {
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: 1px;
+    text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    text-decoration: none;
 }
 /* Call Now and Reservation Buttons */
 .contact-buttons .button-primary {
@@ -346,8 +350,8 @@ main li {
 }
 .contact-buttons .button-primary:hover {
     background-color: var(--charcoal);
-    border-color: var(--charcoal);
     color: var(--cream);
+    border-color: var(--charcoal);
 }
 /* Get Directions Button */
 .contact-buttons .button-secondary {
@@ -428,8 +432,7 @@ footer a:hover {
         opacity: 1;
         visibility: visible;
     }
-    .nav-list {
-        display: flex;
+    .site-nav .nav-list {
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -437,10 +440,10 @@ footer a:hover {
         overflow: hidden;
         width: 100%;
     }
-    .nav-list li {
+    .site-nav .nav-list li {
         width: 100%;
     }
-    .nav-list a {
+    .site-nav .nav-list a {
         display: block;
         padding: 14px 8px;
         border-bottom: 1px solid var(--gold);
@@ -501,4 +504,5 @@ footer a:hover {
         transition-duration: 0.01ms !important;
     }
 }
+
 
